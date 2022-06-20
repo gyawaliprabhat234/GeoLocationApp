@@ -8,11 +8,9 @@ import com.geolocation.service.GeolocationService;
 import io.dropwizard.hibernate.UnitOfWork;
 import io.dropwizard.jersey.caching.CacheControl;
 
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Optional;
@@ -24,7 +22,7 @@ import java.util.concurrent.TimeUnit;
  * @project GeoLocationApp
  */
 
-@Path("/geolocation")
+@Path("/locations")
 @Produces(MediaType.APPLICATION_JSON)
 public class GeolocationResource {
     private final GeolocationService geolocationService;
@@ -35,11 +33,10 @@ public class GeolocationResource {
 
     @GET
     @Timed
-    @Path("/{ipAddress}")
+    @Path("/")
     @UnitOfWork
-    @CacheControl(maxAge = 1, maxAgeUnit = TimeUnit.MINUTES)
     public Response getGeolocation(@Pattern(regexp = "^((25[0-5]|(2[0-4]|1\\d|[1-9]|)\\d)(\\.(?!$)|$)){4}$",
-            message = "ip address is not valid") @PathParam("ipAddress") String ipAddress) {
+            message = "ip address is not valid") @NotEmpty @QueryParam("ip") String ipAddress) {
         Optional<GeolocationDto> optionalGeolocationDto = GeolocationCaching.getInstance().getGeolocationDataFromCache(ipAddress);;
         ResponseDto response =  optionalGeolocationDto
                 .filter((locationDto)-> locationDto.getStatus().equals("success"))

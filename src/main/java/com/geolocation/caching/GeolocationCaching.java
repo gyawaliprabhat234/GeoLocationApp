@@ -34,7 +34,7 @@ public class GeolocationCaching {
             locationCache = CacheBuilder.newBuilder()
                     .concurrencyLevel(20)
                     .maximumSize(2000)
-                    .expireAfterAccess(10, TimeUnit.SECONDS)
+                    .expireAfterAccess(1, TimeUnit.MINUTES)
                     .recordStats()
                     .build(new CacheLoader<String, GeolocationDto>() { // Build the CacheLoader
                         @Override
