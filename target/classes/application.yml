@@ -1,0 +1,42 @@
+server:
+  adminMinThreads: 1
+  adminMaxThreads: 64
+  adminContextPath: /
+  applicationContextPath: /
+  applicationConnectors:
+    - type: http
+      port: 8089
+  adminConnectors:
+    - type: http
+      port: 8090
+database:
+  driverClass: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/geolocation?createDatabaseIfNotExist=true
+  maxWaitForConnection: 1s
+  validationQuery: "/* MyApplication Health Check */ SELECT 1"
+  minSize: 8
+  maxSize: 32
+  checkConnectionWhileIdle: false
+  user: root
+  password: prabhat12345
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate.show_sql: true
+    hibernate.hbm2ddl.auto: create
+
+geoApiURL: http://ip-api.com/json/
+
+logging:
+  level: INFO
+  appenders:
+    - type: file
+      threshold: INFO
+      currentLogFilename: ./logs/geolocation.log
+      archivedLogFilenamePattern: ./logs/egeolocation-%d.log.gz
+      archivedFileCount: 5
+    - type: console
+      threshold: INFO
+      target: stderr
+
+
