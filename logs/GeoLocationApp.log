@@ -373,3 +373,356 @@ INFO  [2022-06-20 16:22:37,074] org.hibernate.engine.internal.StatisticalLogging
     54765700 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
+INFO  [2022-06-20 16:45:00,676] org.eclipse.jetty.util.log: Logging initialized @4285ms to org.eclipse.jetty.util.log.Slf4jLog
+INFO  [2022-06-20 16:45:00,797] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2022-06-20 16:45:00,799] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2022-06-20 16:45:00,973] org.hibernate.Version: HHH000412: Hibernate ORM core version 5.6.7.Final
+INFO  [2022-06-20 16:45:01,286] io.dropwizard.hibernate.SessionFactoryFactory: Entity classes: [com.geolocation.domain.entity.Geolocation]
+INFO  [2022-06-20 16:45:01,333] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+INFO  [2022-06-20 16:45:02,929] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO  [2022-06-20 16:45:04,330] io.dropwizard.server.ServerFactory: Starting GeoLocationApp
+INFO  [2022-06-20 16:45:04,442] org.eclipse.jetty.setuid.SetUIDListener: Opened application@520c3dcb{HTTP/1.1, (http/1.1)}{0.0.0.0:8089}
+INFO  [2022-06-20 16:45:04,443] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@145fe8ab{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
+INFO  [2022-06-20 16:45:04,446] org.eclipse.jetty.server.Server: jetty-9.4.46.v20220331; built: 2022-03-31T16:38:08.030Z; git: bc17a0369a11ecf40bb92c839b9ef0a8ac50ea18; jvm 11.0.11+9-LTS
+INFO  [2022-06-20 16:45:05,042] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /locations/ (com.geolocation.resource.GeolocationResource)
+
+WARN  [2022-06-20 16:45:05,047] org.glassfish.jersey.internal.Errors: The following warnings have been detected: WARNING: The (sub)resource method getGeolocation in com.geolocation.resource.GeolocationResource contains empty path annotation.
+
+INFO  [2022-06-20 16:45:05,049] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@5f32ab17{/,null,AVAILABLE}
+INFO  [2022-06-20 16:45:05,054] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2022-06-20 16:45:05,055] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@c86c486{/,null,AVAILABLE}
+INFO  [2022-06-20 16:45:05,073] org.eclipse.jetty.server.AbstractConnector: Started application@520c3dcb{HTTP/1.1, (http/1.1)}{0.0.0.0:8089}
+INFO  [2022-06-20 16:45:05,080] org.eclipse.jetty.server.AbstractConnector: Started admin@145fe8ab{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
+INFO  [2022-06-20 16:45:05,080] org.eclipse.jetty.server.Server: Started @8691ms
+INFO  [2022-06-20 16:45:07,602] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0} 
+INFO  [2022-06-20 16:45:07,617] com.geolocation.caching.GeolocationCaching: Fetching Geolocation Data from DB/ Cache
+INFO  [2022-06-20 16:45:07,617] com.geolocation.service.GeolocationService: Ip address Searching in Database: 24.48.0.1
+INFO  [2022-06-20 16:45:07,617] com.geolocation.service.GeolocationService: Searching for {} in database: 24.48.0.1
+INFO  [2022-06-20 16:45:07,684] com.geolocation.service.GeolocationService: Record of 24.48.0.1 is not found in database
+INFO  [2022-06-20 16:45:07,684] com.geolocation.service.GeolocationService: making api call to search 24.48.0.1: 
+INFO  [2022-06-20 16:45:08,166] com.geolocation.service.GeolocationService: save geolocation data in database with ip address: 24.48.0.1
+INFO  [2022-06-20 16:45:08,321] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    52600 nanoseconds spent acquiring 1 JDBC connections;
+    28600 nanoseconds spent releasing 1 JDBC connections;
+    24387500 nanoseconds spent preparing 3 JDBC statements;
+    30874100 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    58292200 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2022-06-20 16:45:16,665] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=0, missCount=1, loadSuccessCount=1, loadExceptionCount=0, totalLoadTime=601489300, evictionCount=0} 
+INFO  [2022-06-20 16:45:16,670] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    61400 nanoseconds spent acquiring 1 JDBC connections;
+    38900 nanoseconds spent releasing 1 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2022-06-20 16:45:39,301] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=1, missCount=1, loadSuccessCount=1, loadExceptionCount=0, totalLoadTime=601489300, evictionCount=0} 
+INFO  [2022-06-20 16:45:39,304] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    33700 nanoseconds spent acquiring 1 JDBC connections;
+    26700 nanoseconds spent releasing 1 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2022-06-20 16:45:46,502] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=2, missCount=1, loadSuccessCount=1, loadExceptionCount=0, totalLoadTime=601489300, evictionCount=0} 
+INFO  [2022-06-20 16:45:46,504] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    47100 nanoseconds spent acquiring 1 JDBC connections;
+    20400 nanoseconds spent releasing 1 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2022-06-20 16:50:39,297] org.eclipse.jetty.util.log: Logging initialized @2949ms to org.eclipse.jetty.util.log.Slf4jLog
+INFO  [2022-06-20 16:50:39,399] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2022-06-20 16:50:39,402] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2022-06-20 16:50:39,548] org.hibernate.Version: HHH000412: Hibernate ORM core version 5.6.7.Final
+INFO  [2022-06-20 16:50:39,816] io.dropwizard.hibernate.SessionFactoryFactory: Entity classes: [com.geolocation.domain.entity.Geolocation]
+INFO  [2022-06-20 16:50:39,853] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+INFO  [2022-06-20 16:50:41,091] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO  [2022-06-20 16:50:42,453] io.dropwizard.server.ServerFactory: Starting GeoLocationApp
+INFO  [2022-06-20 16:50:42,548] org.eclipse.jetty.setuid.SetUIDListener: Opened application@2295566b{HTTP/1.1, (http/1.1)}{0.0.0.0:8089}
+INFO  [2022-06-20 16:50:42,548] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@174e1b99{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
+INFO  [2022-06-20 16:50:42,551] org.eclipse.jetty.server.Server: jetty-9.4.46.v20220331; built: 2022-03-31T16:38:08.030Z; git: bc17a0369a11ecf40bb92c839b9ef0a8ac50ea18; jvm 11.0.11+9-LTS
+INFO  [2022-06-20 16:50:43,120] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /locations/ (com.geolocation.resource.GeolocationResource)
+
+WARN  [2022-06-20 16:50:43,123] org.glassfish.jersey.internal.Errors: The following warnings have been detected: WARNING: The (sub)resource method getGeolocation in com.geolocation.resource.GeolocationResource contains empty path annotation.
+
+INFO  [2022-06-20 16:50:43,124] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@2d23a5be{/,null,AVAILABLE}
+INFO  [2022-06-20 16:50:43,130] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2022-06-20 16:50:43,131] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@45cf0c15{/,null,AVAILABLE}
+INFO  [2022-06-20 16:50:43,150] org.eclipse.jetty.server.AbstractConnector: Started application@2295566b{HTTP/1.1, (http/1.1)}{0.0.0.0:8089}
+INFO  [2022-06-20 16:50:43,157] org.eclipse.jetty.server.AbstractConnector: Started admin@174e1b99{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
+INFO  [2022-06-20 16:50:43,157] org.eclipse.jetty.server.Server: Started @6811ms
+INFO  [2022-06-20 16:50:48,809] com.geolocation.service.GeolocationService: get request is made by passing 24.48.0.1 ip address 
+INFO  [2022-06-20 16:50:48,809] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0} 
+INFO  [2022-06-20 16:50:48,823] com.geolocation.caching.GeolocationCaching: Fetching Geolocation Data from DB/ Cache
+INFO  [2022-06-20 16:50:48,824] com.geolocation.service.GeolocationService: Ip address Searching in Database: 24.48.0.1
+INFO  [2022-06-20 16:50:48,824] com.geolocation.service.GeolocationService: Searching for {} in database: 24.48.0.1
+INFO  [2022-06-20 16:50:48,884] com.geolocation.service.GeolocationService: Record of 24.48.0.1 is not found in database
+INFO  [2022-06-20 16:50:48,884] com.geolocation.service.GeolocationService: making api call to search 24.48.0.1: 
+INFO  [2022-06-20 16:50:49,157] com.geolocation.service.GeolocationService: save geolocation data in database with ip address: 24.48.0.1
+INFO  [2022-06-20 16:50:49,268] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    72200 nanoseconds spent acquiring 1 JDBC connections;
+    34200 nanoseconds spent releasing 1 JDBC connections;
+    19393500 nanoseconds spent preparing 3 JDBC statements;
+    32281600 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    41182000 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2022-06-20 16:57:15,784] org.eclipse.jetty.util.log: Logging initialized @3156ms to org.eclipse.jetty.util.log.Slf4jLog
+INFO  [2022-06-20 16:57:15,867] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2022-06-20 16:57:15,869] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2022-06-20 16:57:16,011] org.hibernate.Version: HHH000412: Hibernate ORM core version 5.6.7.Final
+INFO  [2022-06-20 16:57:16,293] io.dropwizard.hibernate.SessionFactoryFactory: Entity classes: [com.geolocation.domain.entity.Geolocation]
+INFO  [2022-06-20 16:57:16,322] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+INFO  [2022-06-20 16:57:17,754] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO  [2022-06-20 16:57:19,119] io.dropwizard.server.ServerFactory: Starting GeoLocationApp
+INFO  [2022-06-20 16:57:19,219] org.eclipse.jetty.setuid.SetUIDListener: Opened application@2295566b{HTTP/1.1, (http/1.1)}{0.0.0.0:8089}
+INFO  [2022-06-20 16:57:19,220] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@174e1b99{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
+INFO  [2022-06-20 16:57:19,222] org.eclipse.jetty.server.Server: jetty-9.4.46.v20220331; built: 2022-03-31T16:38:08.030Z; git: bc17a0369a11ecf40bb92c839b9ef0a8ac50ea18; jvm 11.0.11+9-LTS
+INFO  [2022-06-20 16:57:19,781] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /locations/ (com.geolocation.resource.GeolocationResource)
+
+WARN  [2022-06-20 16:57:19,783] org.glassfish.jersey.internal.Errors: The following warnings have been detected: WARNING: The (sub)resource method getGeolocation in com.geolocation.resource.GeolocationResource contains empty path annotation.
+
+INFO  [2022-06-20 16:57:19,784] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@2d23a5be{/,null,AVAILABLE}
+INFO  [2022-06-20 16:57:19,788] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2022-06-20 16:57:19,789] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@45cf0c15{/,null,AVAILABLE}
+INFO  [2022-06-20 16:57:19,820] org.eclipse.jetty.server.AbstractConnector: Started application@2295566b{HTTP/1.1, (http/1.1)}{0.0.0.0:8089}
+INFO  [2022-06-20 16:57:19,829] org.eclipse.jetty.server.AbstractConnector: Started admin@174e1b99{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
+INFO  [2022-06-20 16:57:19,829] org.eclipse.jetty.server.Server: Started @7202ms
+INFO  [2022-06-20 16:57:31,074] com.geolocation.service.GeolocationService: 
+GET request by passing 24.48.0.1 ip address 
+INFO  [2022-06-20 16:57:31,074] com.geolocation.service.GeolocationService: ============STARTING GETTING DATA==================
+INFO  [2022-06-20 16:57:31,074] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0} 
+INFO  [2022-06-20 16:57:31,088] com.geolocation.caching.GeolocationCaching: Fetching Geolocation Data from DB/ Cache
+INFO  [2022-06-20 16:57:31,088] com.geolocation.service.GeolocationService: Ip address Searching in Database: 24.48.0.1
+INFO  [2022-06-20 16:57:31,089] com.geolocation.service.GeolocationService: Searching for {} in database: 24.48.0.1
+INFO  [2022-06-20 16:57:31,148] com.geolocation.service.GeolocationService: Record of 24.48.0.1 is not found in database
+INFO  [2022-06-20 16:57:31,149] com.geolocation.service.GeolocationService: making api call to search 24.48.0.1: 
+INFO  [2022-06-20 16:57:31,430] com.geolocation.service.GeolocationService: save geolocation data in database with ip address: 24.48.0.1
+INFO  [2022-06-20 16:57:31,492] com.geolocation.service.GeolocationService: TIME TAKEN TO RESPONSE : 418 ms
+INFO  [2022-06-20 16:57:31,492] com.geolocation.service.GeolocationService: ============SENDING RESPONSE==================
+
+INFO  [2022-06-20 16:57:31,581] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    55700 nanoseconds spent acquiring 1 JDBC connections;
+    93800 nanoseconds spent releasing 1 JDBC connections;
+    31740000 nanoseconds spent preparing 3 JDBC statements;
+    13504500 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    48743600 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2022-06-20 16:57:53,116] com.geolocation.service.GeolocationService: 
+GET request by passing 24.48.0.1 ip address 
+INFO  [2022-06-20 16:57:53,116] com.geolocation.service.GeolocationService: ============STARTING GETTING DATA==================
+INFO  [2022-06-20 16:57:53,116] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=0, missCount=1, loadSuccessCount=1, loadExceptionCount=0, totalLoadTime=402431300, evictionCount=0} 
+INFO  [2022-06-20 16:57:53,116] com.geolocation.service.GeolocationService: TIME TAKEN TO RESPONSE : 0 ms
+INFO  [2022-06-20 16:57:53,117] com.geolocation.service.GeolocationService: ============SENDING RESPONSE==================
+
+INFO  [2022-06-20 16:57:53,121] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    68500 nanoseconds spent acquiring 1 JDBC connections;
+    36800 nanoseconds spent releasing 1 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2022-06-20 16:57:54,861] com.geolocation.service.GeolocationService: 
+GET request by passing 24.48.0.1 ip address 
+INFO  [2022-06-20 16:57:54,861] com.geolocation.service.GeolocationService: ============STARTING GETTING DATA==================
+INFO  [2022-06-20 16:57:54,861] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=1, missCount=1, loadSuccessCount=1, loadExceptionCount=0, totalLoadTime=402431300, evictionCount=0} 
+INFO  [2022-06-20 16:57:54,861] com.geolocation.service.GeolocationService: TIME TAKEN TO RESPONSE : 0 ms
+INFO  [2022-06-20 16:57:54,861] com.geolocation.service.GeolocationService: ============SENDING RESPONSE==================
+
+INFO  [2022-06-20 16:57:54,863] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    63900 nanoseconds spent acquiring 1 JDBC connections;
+    24100 nanoseconds spent releasing 1 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2022-06-20 16:57:55,952] com.geolocation.service.GeolocationService: 
+GET request by passing 24.48.0.1 ip address 
+INFO  [2022-06-20 16:57:55,952] com.geolocation.service.GeolocationService: ============STARTING GETTING DATA==================
+INFO  [2022-06-20 16:57:55,952] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=2, missCount=1, loadSuccessCount=1, loadExceptionCount=0, totalLoadTime=402431300, evictionCount=0} 
+INFO  [2022-06-20 16:57:55,952] com.geolocation.service.GeolocationService: TIME TAKEN TO RESPONSE : 0 ms
+INFO  [2022-06-20 16:57:55,952] com.geolocation.service.GeolocationService: ============SENDING RESPONSE==================
+
+INFO  [2022-06-20 16:57:55,954] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    46400 nanoseconds spent acquiring 1 JDBC connections;
+    31600 nanoseconds spent releasing 1 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2022-06-20 16:59:17,896] org.eclipse.jetty.util.log: Logging initialized @3153ms to org.eclipse.jetty.util.log.Slf4jLog
+INFO  [2022-06-20 16:59:18,001] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2022-06-20 16:59:18,003] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2022-06-20 16:59:18,216] org.hibernate.Version: HHH000412: Hibernate ORM core version 5.6.7.Final
+INFO  [2022-06-20 16:59:18,612] io.dropwizard.hibernate.SessionFactoryFactory: Entity classes: [com.geolocation.domain.entity.Geolocation]
+INFO  [2022-06-20 16:59:18,652] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+INFO  [2022-06-20 16:59:20,338] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+INFO  [2022-06-20 16:59:21,977] io.dropwizard.server.ServerFactory: Starting GeoLocationApp
+INFO  [2022-06-20 16:59:22,079] org.eclipse.jetty.setuid.SetUIDListener: Opened application@520c3dcb{HTTP/1.1, (http/1.1)}{0.0.0.0:8089}
+INFO  [2022-06-20 16:59:22,079] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@145fe8ab{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
+INFO  [2022-06-20 16:59:22,083] org.eclipse.jetty.server.Server: jetty-9.4.46.v20220331; built: 2022-03-31T16:38:08.030Z; git: bc17a0369a11ecf40bb92c839b9ef0a8ac50ea18; jvm 11.0.11+9-LTS
+INFO  [2022-06-20 16:59:22,871] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /locations/ (com.geolocation.resource.GeolocationResource)
+
+WARN  [2022-06-20 16:59:22,876] org.glassfish.jersey.internal.Errors: The following warnings have been detected: WARNING: The (sub)resource method getGeolocation in com.geolocation.resource.GeolocationResource contains empty path annotation.
+
+INFO  [2022-06-20 16:59:22,878] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@5f32ab17{/,null,AVAILABLE}
+INFO  [2022-06-20 16:59:22,882] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2022-06-20 16:59:22,883] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@c86c486{/,null,AVAILABLE}
+INFO  [2022-06-20 16:59:22,898] org.eclipse.jetty.server.AbstractConnector: Started application@520c3dcb{HTTP/1.1, (http/1.1)}{0.0.0.0:8089}
+INFO  [2022-06-20 16:59:22,919] org.eclipse.jetty.server.AbstractConnector: Started admin@145fe8ab{HTTP/1.1, (http/1.1)}{0.0.0.0:8090}
+INFO  [2022-06-20 16:59:22,919] org.eclipse.jetty.server.Server: Started @8177ms
+INFO  [2022-06-20 16:59:27,872] com.geolocation.service.GeolocationService: 
+GET request by passing 24.48.0.1 ip address 
+INFO  [2022-06-20 16:59:27,872] com.geolocation.service.GeolocationService: ============GETTING DATA==================
+INFO  [2022-06-20 16:59:27,873] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0} 
+INFO  [2022-06-20 16:59:27,882] com.geolocation.caching.GeolocationCaching: Fetching Geolocation Data from DB/ Cache
+INFO  [2022-06-20 16:59:27,882] com.geolocation.service.GeolocationService: Ip address Searching in Database: 24.48.0.1
+INFO  [2022-06-20 16:59:27,882] com.geolocation.service.GeolocationService: Searching for {} in database: 24.48.0.1
+INFO  [2022-06-20 16:59:27,942] com.geolocation.service.GeolocationService: Record of 24.48.0.1 is not found in database
+INFO  [2022-06-20 16:59:27,942] com.geolocation.service.GeolocationService: making api call to search 24.48.0.1: 
+INFO  [2022-06-20 16:59:28,203] com.geolocation.service.GeolocationService: save geolocation data in database with ip address: 24.48.0.1
+INFO  [2022-06-20 16:59:28,232] com.geolocation.service.GeolocationService: TIME TAKEN : 360 ms
+INFO  [2022-06-20 16:59:28,233] com.geolocation.service.GeolocationService: ============RESPONSE SENT==================
+
+INFO  [2022-06-20 16:59:28,314] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    49900 nanoseconds spent acquiring 1 JDBC connections;
+    36900 nanoseconds spent releasing 1 JDBC connections;
+    20747300 nanoseconds spent preparing 3 JDBC statements;
+    34333100 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    39655100 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2022-06-20 16:59:57,755] com.geolocation.service.GeolocationService: 
+GET request by passing 24.48.0.1 ip address 
+INFO  [2022-06-20 16:59:57,755] com.geolocation.service.GeolocationService: ============GETTING DATA==================
+INFO  [2022-06-20 16:59:57,756] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=0, missCount=1, loadSuccessCount=1, loadExceptionCount=0, totalLoadTime=349048300, evictionCount=0} 
+INFO  [2022-06-20 16:59:57,756] com.geolocation.service.GeolocationService: TIME TAKEN : 1 ms
+INFO  [2022-06-20 16:59:57,756] com.geolocation.service.GeolocationService: ============RESPONSE SENT==================
+
+INFO  [2022-06-20 16:59:57,759] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    43000 nanoseconds spent acquiring 1 JDBC connections;
+    26000 nanoseconds spent releasing 1 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2022-06-20 17:00:06,156] com.geolocation.service.GeolocationService: 
+GET request by passing 24.48.0.1 ip address 
+INFO  [2022-06-20 17:00:06,156] com.geolocation.service.GeolocationService: ============GETTING DATA==================
+INFO  [2022-06-20 17:00:06,156] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=1, missCount=1, loadSuccessCount=1, loadExceptionCount=0, totalLoadTime=349048300, evictionCount=0} 
+INFO  [2022-06-20 17:00:06,156] com.geolocation.service.GeolocationService: TIME TAKEN : 0 ms
+INFO  [2022-06-20 17:00:06,156] com.geolocation.service.GeolocationService: ============RESPONSE SENT==================
+
+INFO  [2022-06-20 17:00:06,159] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    35500 nanoseconds spent acquiring 1 JDBC connections;
+    25800 nanoseconds spent releasing 1 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+INFO  [2022-06-20 17:01:43,827] com.geolocation.service.GeolocationService: 
+GET request by passing 24.48.0.1 ip address 
+INFO  [2022-06-20 17:01:43,827] com.geolocation.service.GeolocationService: ============GETTING DATA==================
+INFO  [2022-06-20 17:01:43,827] com.geolocation.caching.GeolocationCaching: CacheStats = CacheStats{hitCount=2, missCount=1, loadSuccessCount=1, loadExceptionCount=0, totalLoadTime=349048300, evictionCount=0} 
+INFO  [2022-06-20 17:01:43,852] com.geolocation.caching.GeolocationCaching: Fetching Geolocation Data from DB/ Cache
+INFO  [2022-06-20 17:01:43,852] com.geolocation.service.GeolocationService: Ip address Searching in Database: 24.48.0.1
+INFO  [2022-06-20 17:01:43,852] com.geolocation.service.GeolocationService: Searching for {} in database: 24.48.0.1
+INFO  [2022-06-20 17:01:43,883] com.geolocation.service.GeolocationService: TIME TAKEN : 56 ms
+INFO  [2022-06-20 17:01:43,883] com.geolocation.service.GeolocationService: ============RESPONSE SENT==================
+
+INFO  [2022-06-20 17:01:43,886] org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: Session Metrics {
+    49100 nanoseconds spent acquiring 1 JDBC connections;
+    36000 nanoseconds spent releasing 1 JDBC connections;
+    620700 nanoseconds spent preparing 1 JDBC statements;
+    15814500 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    130700 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}

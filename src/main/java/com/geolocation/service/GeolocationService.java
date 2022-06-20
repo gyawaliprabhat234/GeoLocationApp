@@ -1,5 +1,6 @@
 package com.geolocation.service;
 
+import com.geolocation.caching.GeolocationCaching;
 import com.geolocation.domain.dto.GeolocationDto;
 import com.geolocation.domain.entity.Geolocation;
 import com.geolocation.exception.RecordNotFoundException;
@@ -74,5 +75,9 @@ public class GeolocationService{
             log.info("Record of {} is not found in database", ipAddress);
             return  new RecordNotFoundException("Ip Address is not found");
         });
+    }
+
+    public Optional<GeolocationDto> getGeoLocation(String ipAddress) {
+        return GeolocationCaching.getInstance().getGeolocationDataFromCache(ipAddress);
     }
 }
