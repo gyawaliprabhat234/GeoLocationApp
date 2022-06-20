@@ -19,15 +19,14 @@ import java.util.Optional;
  */
 public class GeolocationService{
 
-    private final String getURL;
 
     private final GeolocationDAO geolocationDAO;
-    private Client client;
+    private Client restClient;
     private static Logger log = LoggerFactory.getLogger(GeolocationService.class);
-
-    public GeolocationService(GeolocationDAO geolocationDAO, Client client, String geoApiUrl){
+    private final String getURL;
+    public GeolocationService(GeolocationDAO geolocationDAO, Client restClient, String geoApiUrl){
         this.geolocationDAO = geolocationDAO;
-        this.client = client;
+        this.restClient = restClient;
         this.getURL = geoApiUrl;
     }
 
@@ -44,7 +43,6 @@ public class GeolocationService{
                 //saving the new record
                 saveGeoData(geoLocation);
             }
-            // geolocationDTO = GeoLocationMapper.mapToDto(geoData);
         }
         catch (RecordNotFoundException c){
             log.info("making api call to search {}: ", ipAddress);
@@ -62,7 +60,7 @@ public class GeolocationService{
     }
 
     private Geolocation getGeoDataFromApiCall(String ipAddress){
-        Geolocation  geolocation =  client.target(getURL+ipAddress)
+        Geolocation  geolocation =  restClient.target(getURL+ipAddress)
                 .request().get()
                 .readEntity(Geolocation.class);
         geolocation.setIpAddress(ipAddress);
@@ -72,12 +70,6 @@ public class GeolocationService{
     private Geolocation getGeoDataFromDB (String ipAddress){
         log.info("Searching for {} in database: "+ipAddress);
         Geolocation geolocationOpt = geolocationDAO.findByIpAddress(ipAddress);
-//        if(geolocationOpt!=null){
-//            log.info("Record found in database");
-//        }else{
-//            log.info("Record not found in database: need to call external API");
-//            throw new ApiException("Ip address not present in database");
-//        }
         return Optional.ofNullable(geolocationOpt).orElseThrow(()-> {
             log.info("Record of {} is not found in database", ipAddress);
             return  new RecordNotFoundException("Ip Address is not found");
