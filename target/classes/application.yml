@@ -32,7 +32,7 @@ logging:
   appenders:
     - type: file
       threshold: INFO
-      currentLogFilename: ./logs/geolocation.log
+      currentLogFilename: ./logs/GeoLocationApp.log
       archivedLogFilenamePattern: ./logs/egeolocation-%d.log.gz
       archivedFileCount: 5
     - type: console
